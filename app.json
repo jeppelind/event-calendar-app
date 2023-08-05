@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Evenemangskalendern",
+    "slug": "evenemangskalendern",
+    "version": "1.1.1-beta1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1c5885"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "assets/images/*"
+    ],
+    "platforms": ["android", "ios", "web"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.jeppelind.evenemangskalendern",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1c5885"
+      },
+      "package": "com.jeppelind.evenemangskalendern",
+      "versionCode": 5,
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "userInterfaceStyle": "automatic"
+  }
+}

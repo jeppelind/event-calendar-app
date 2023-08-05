@@ -1,0 +1,8 @@
+/node_modules/
+/dist/
+.env.local
+/zdump
+resolver-types.d.ts
+
+/.expo/
+/android/

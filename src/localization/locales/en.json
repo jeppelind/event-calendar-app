@@ -1,0 +1,33 @@
+{
+  "events": {
+    "create": "Create",
+    "createLabel": "Add new event",
+    "delete": "Delete",
+    "deleteLabel": "Delete event",
+    "deleting": "Deleting...",
+    "description": "Description",
+    "editLabel": "Edit event",
+    "endDate": "End date",
+    "loading": "Loading...",
+    "noMoreEvents": "No more events",
+    "startDate": "Start date",
+    "title": "Title"
+  },
+  "navigation": {
+    "home": "Start",
+    "logIn": "Log in",
+    "logOut": "Log out",
+    "settings": "Settings"
+  },
+  "settings": {
+    "language": "Language"
+  },
+  "user": {
+    "email": "Email",
+    "logIn": "Log in",
+    "password": "Password"
+  },
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "save": "Save"
+}

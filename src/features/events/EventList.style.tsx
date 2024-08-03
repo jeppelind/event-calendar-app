@@ -29,7 +29,7 @@ export default StyleSheet.create({
     opacity: 0.5,
   },
   description: {
-    opacity: 0.5,
+    opacity: 0.65,
   },
   footer: {
     minHeight: 75,

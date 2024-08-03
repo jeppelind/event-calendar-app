@@ -46,13 +46,15 @@ const MainNavigationStack = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            title: 'Evenemangskalendern 2',
+            title: 'Evenemangskalendern',
             headerTitleStyle: {
               fontFamily: 'Poppins_700Bold',
               fontSize: 14,
             },
             headerTitleAlign: 'center',
+            // eslint-disable-next-line react/no-unstable-nested-components
             headerLeft: () => <MyAppIconButton icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />,
+            // eslint-disable-next-line react/no-unstable-nested-components
             headerRight: () => {
               if (user.name) {
                 return <MyAppIconButton icon="add-box" onPress={() => navigation.navigate('AddEventModal')} />;
@@ -98,15 +100,17 @@ const CustomDrawerContent = () => {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
+  const colorScheme = useColorScheme();
+  const theme = (colorScheme === 'light') ? lightTheme : darkTheme;
 
-  const labelStyle = { fontSize: 16, fontFamily: 'Poppins_400Regular' };
+  const labelStyle = { fontSize: 20, fontFamily: 'Poppins_400Regular', color: theme.text, paddingTop: 10 };
 
   return (
     <DrawerContentScrollView
-      contentContainerStyle={{ flex: 1, justifyContent: 'space-between' }}
+      contentContainerStyle={{ flex: 1, justifyContent: 'space-between', backgroundColor: theme.background }}
     >
       <View>
-        <View style={{ alignItems: 'center', padding: 10 }}>
+        <View style={{ alignItems: 'center', padding: 10, backgroundColor: 'white' }}>
           <Image
             style={{ width: 80, height: 80 }}
             // eslint-disable-next-line global-require
@@ -155,6 +159,7 @@ const DrawerNavigation = () => (
     screenOptions={{
       headerShown: false,
     }}
+    // eslint-disable-next-line react/no-unstable-nested-components
     drawerContent={() => <CustomDrawerContent />}
   >
     <Drawer.Screen

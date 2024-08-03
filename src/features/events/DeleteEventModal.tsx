@@ -54,13 +54,13 @@ const DeleteEventModal = () => {
 
   return (
     <View style={styles.container}>
-      <MyAppHeader>{i18next.t('events.deleteLabel')}</MyAppHeader>
+      <MyAppHeader>{String(i18next.t('events.deleteLabel'))}</MyAppHeader>
       <View style={styles.content}>
         <MyAppText style={{ fontSize: 17, marginVertical: 20 }}>{name}</MyAppText>
         { isLoading
           ? (
             <View style={styles.buttons}>
-              <MyAppText style={{ flex: 1, textAlign: 'center' }}>{i18next.t('events.deleting')}</MyAppText>
+              <MyAppText style={{ flex: 1, textAlign: 'center' }}>{String(i18next.t('events.deleting'))}</MyAppText>
             </View>
           )
           : (

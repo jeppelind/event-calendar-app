@@ -85,7 +85,7 @@ const AddEventModal = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <MyAppHeader>{i18next.t('events.createLabel')}</MyAppHeader>
+        <MyAppHeader>{String(i18next.t('events.createLabel'))}</MyAppHeader>
         <MyAppTextInput
           value={title}
           placeholder={i18next.t('events.title')}

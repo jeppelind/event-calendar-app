@@ -31,6 +31,7 @@ module.exports = {
     'linebreak-style': 'off',
     'import/no-unresolved': 'off',
     'no-unused-vars': 'off',
+    'object-curly-newline': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
@@ -38,6 +39,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'error',
     'no-param-reassign': ['error', { props: false }],
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'import/extensions': [
       'error',
       'ignorePackages',

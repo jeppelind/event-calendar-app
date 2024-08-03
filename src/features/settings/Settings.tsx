@@ -34,7 +34,7 @@ const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <MyAppText>{`${i18next.t('settings.language')}: mupp`}</MyAppText>
+      <MyAppText>{`${i18next.t('settings.language')}:`}</MyAppText>
       {Platform.OS === 'ios'
         ? (
           <MyPickerIOS

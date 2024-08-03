@@ -15,13 +15,10 @@ const escapeString = (string: string) => string.replace(/"/g, '\\"');
 const fetchGraphQL = async (query: string, token?: string) => {
   let headers = { 'Content-Type': 'application/json' };
   const accessToken = token || TOKEN_READ;
-  console.log('HEeteo');
   // if (token) {
   headers = { ...headers, ...{ Authorization: `Bearer ${accessToken}` } };
   // }
   const url = `${ENDPOINT}/graphql`;
-  console.log(url);
-  console.log(accessToken);
   const response = await fetch(url, {
     method: 'POST',
     headers,
@@ -31,7 +28,6 @@ const fetchGraphQL = async (query: string, token?: string) => {
     throw Error(response.statusText);
   }
   const result = await response.json();
-  console.log(result);
   return result;
 };
 

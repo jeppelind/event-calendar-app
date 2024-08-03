@@ -3,8 +3,8 @@ import React, { FC, useState } from 'react';
 import {
   Text, TextInputProps, TextProps, StyleSheet, Pressable,
   PressableProps, StyleProp, ViewStyle, Modal, View, useColorScheme,
+  TextInput,
 } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Picker, PickerProps } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: '100%',
     backgroundColor: lightTheme.input,
+    color: lightTheme.text,
   },
   inputDark: {
     backgroundColor: darkTheme.input,
-    color: 'white',
+    color: darkTheme.text,
   },
   header: {
     fontFamily: 'Poppins_700Bold',
@@ -118,7 +119,7 @@ export const MyAppTextInput: FC<TextInputProps> = (props) => {
   const colorScheme = useColorScheme();
   const darkStyle = colorScheme === 'dark' ? styles.inputDark : null;
   return (
-    <TextInput {...props} style={[styles.input, darkStyle, style]}>
+    <TextInput {...props} style={[styles.input, darkStyle, style]} placeholderTextColor="#9e9e9e">
       {children}
     </TextInput>
   );

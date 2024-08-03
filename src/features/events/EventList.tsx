@@ -31,10 +31,10 @@ const EventList = () => {
 
   const footer = () => {
     if (isAllDataFetched) {
-      return <View style={styles.footer}><MyAppText>{i18next.t('events.noMoreEvents')}</MyAppText></View>;
+      return <View style={styles.footer}><MyAppText>{String(i18next.t('events.noMoreEvents'))}</MyAppText></View>;
     }
     if (isLoadingEvents) {
-      return <View style={styles.footer}><MyAppText>{i18next.t('events.loading')}</MyAppText></View>;
+      return <View style={styles.footer}><MyAppText>{String(i18next.t('events.loading'))}</MyAppText></View>;
     }
     return <View style={styles.footer} />;
   };

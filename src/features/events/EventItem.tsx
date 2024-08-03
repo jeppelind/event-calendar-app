@@ -87,7 +87,10 @@ const EventItem = ({ eventId } : { eventId: EntityId}) => {
   const colorScheme = useColorScheme();
   const backgroundColor = (colorScheme === 'light') ? lightTheme.background : darkTheme.background;
 
-  const swipeMenu = (_: Animated.AnimatedInterpolation, dragX: Animated.AnimatedInterpolation) => {
+  const swipeMenu = (
+    _: Animated.AnimatedInterpolation<number>,
+    dragX: Animated.AnimatedInterpolation<number>,
+  ) => {
     const trans = dragX.interpolate({
       inputRange: [0, 100],
       outputRange: [0, 0],

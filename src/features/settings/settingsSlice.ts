@@ -12,7 +12,7 @@ export const saveSettings = createAction('settings/save');
 export const loadSettings = createAsyncThunk('settings/load', async () => {
   const settingsJSON = await AsyncStorage.getItem('settings');
   if (settingsJSON) {
-    return JSON.parse(settingsJSON);
+    return { ...initialState, ...JSON.parse(settingsJSON) };
   }
   return { ...initialState };
 });
@@ -22,14 +22,14 @@ const settingsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(saveSettings, (state) => {
+      AsyncStorage.setItem('settings', JSON.stringify(state));
+    });
     builder.addCase(loadSettings.fulfilled, (state, action) => {
       state.language = action.payload.language;
     });
     builder.addCase(changeLanguageSetting, (state, action) => {
       state.language = action.payload;
-    });
-    builder.addCase(saveSettings, (state) => {
-      AsyncStorage.setItem('settings', JSON.stringify(state));
     });
   },
 });

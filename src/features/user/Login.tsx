@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <MyAppHeader>{i18next.t('user.logIn')}</MyAppHeader>
+        <MyAppHeader>{String(i18next.t('user.logIn'))}</MyAppHeader>
         <MyAppTextInput
           value={email}
           placeholder={i18next.t('user.email')}

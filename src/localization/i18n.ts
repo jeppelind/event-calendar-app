@@ -5,7 +5,7 @@ import sv from './locales/sv.json';
 
 const initI18 = (language: string) => i18next.init({
   compatibilityJSON: 'v3',
-  lng: language === 'system' ? Localization.locale : language,
+  lng: language === 'system' ? Localization.getLocales()[0].languageCode || 'en' : language,
   fallbackLng: 'en',
   resources: {
     en: { translation: en },

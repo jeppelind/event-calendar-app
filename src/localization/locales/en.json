@@ -11,7 +11,8 @@
     "loading": "Loading...",
     "noMoreEvents": "No more events",
     "startDate": "Start date",
-    "title": "Title"
+    "title": "Title",
+    "ongoing": "Ongoing"
   },
   "navigation": {
     "home": "Start",

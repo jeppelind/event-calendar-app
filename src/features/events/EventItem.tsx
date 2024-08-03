@@ -2,10 +2,11 @@ import { useNavigation } from '@react-navigation/native';
 import { EntityId } from '@reduxjs/toolkit';
 import React from 'react';
 import {
-  Animated, useColorScheme, useWindowDimensions, View,
+  Animated, Text, useColorScheme, useWindowDimensions, View,
 } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import { useSelector } from 'react-redux';
+import i18next from 'i18next';
 import { darkTheme, lightTheme } from '../../utils/color';
 import { MyAppIconButton, MyAppText } from '../../utils/Components';
 import { selectUserToken } from '../user/userSlice';
@@ -76,6 +77,16 @@ const YearDisplay = ({ endDate }: { endDate: string }) => {
   return null;
 };
 
+const OngoingIndicator = ({ startDate, endDate }: { startDate: string, endDate: string }) => {
+  const startDateObj = new Date(startDate);
+  const endDateObj = new Date(endDate);
+  const dateToday = new Date().setHours(23, 59, 59);
+  if (dateToday > startDateObj.getTime() && dateToday < endDateObj.getTime()) {
+    return <Text style={styles.active}>{String(i18next.t('ongoing'))}</Text>;
+  }
+  return null;
+};
+
 const EventItem = ({ eventId } : { eventId: EntityId}) => {
   const navigation = useNavigation();
   const userToken = useSelector(selectUserToken);
@@ -132,6 +143,7 @@ const EventItem = ({ eventId } : { eventId: EntityId}) => {
           <View style={styles.dateParent}>
             <MyAppText style={styles.date}>{formatDate(startDate, endDate)}</MyAppText>
             <YearDisplay endDate={endDate} />
+            <OngoingIndicator startDate={startDate} endDate={endDate} />
           </View>
           <MyAppText style={styles.label}>{name}</MyAppText>
           {

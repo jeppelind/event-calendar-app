@@ -11,7 +11,8 @@
     "loading": "Laddar...",
     "noMoreEvents": "Inga fler event",
     "startDate": "Startdatum",
-    "title": "Titel"
+    "title": "Titel",
+    "ongoing": "Pågående"
   },
   "navigation": {
     "home": "Start",

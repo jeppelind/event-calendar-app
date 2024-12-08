@@ -78,11 +78,11 @@ const YearDisplay = ({ endDate }: { endDate: string }) => {
 };
 
 const OngoingIndicator = ({ startDate, endDate }: { startDate: string, endDate: string }) => {
-  const startDateObj = new Date(startDate);
-  const endDateObj = new Date(endDate);
-  const dateToday = new Date().setHours(23, 59, 59);
-  if (dateToday > startDateObj.getTime() && dateToday < endDateObj.getTime()) {
-    return <Text style={styles.active}>{String(i18next.t('ongoing'))}</Text>;
+  const startDateObj = new Date(startDate).setHours(0, 0, 0);
+  const endDateObj = new Date(endDate).setHours(23, 59, 59);
+  const dateNow = Date.now();
+  if (dateNow > startDateObj && dateNow <= endDateObj) {
+    return <Text style={styles.active}>{String(i18next.t('events.ongoing'))}</Text>;
   }
   return null;
 };

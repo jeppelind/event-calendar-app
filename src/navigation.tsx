@@ -3,7 +3,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@rea
 import { DrawerActions, NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
-import { Image, useColorScheme, View } from 'react-native';
+import { Image, useColorScheme, View, StyleSheet } from 'react-native';
 import i18next from 'i18next';
 import HomeScreen from './features/homescreen/HomeScreen';
 import Login from './features/user/Login';
@@ -16,6 +16,21 @@ import EditEventModal from './features/events/EditEventModal';
 import { darkTheme, lightTheme } from './utils/color';
 import appConf from '../app.json';
 import Settings from './features/settings/Settings';
+
+const styles = StyleSheet.create({
+  headerIcon: {
+    minWidth: 32,
+    minHeight: 32,
+    // flex: 1,
+    // borderColor: 'hotpink',
+    // borderWidth: 1,
+    // zIndex: 2000,
+    // overflow: 'visible',
+    // lineHeight: 1,
+    // flexWrap: 'nowrap',
+    // elevation: 4,
+  },
+});
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,11 +68,11 @@ const MainNavigationStack = () => {
             },
             headerTitleAlign: 'center',
             // eslint-disable-next-line react/no-unstable-nested-components
-            headerLeft: () => <MyAppIconButton icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />,
+            headerLeft: () => <MyAppIconButton icon="menu" style={styles.headerIcon} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />,
             // eslint-disable-next-line react/no-unstable-nested-components
             headerRight: () => {
               if (user.name) {
-                return <MyAppIconButton icon="add-box" onPress={() => navigation.navigate('AddEventModal')} />;
+                return <MyAppIconButton icon="add-box" style={styles.headerIcon} onPress={() => navigation.navigate('AddEventModal')} />;
               }
               return null;
             },

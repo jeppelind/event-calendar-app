@@ -21,14 +21,6 @@ const styles = StyleSheet.create({
   headerIcon: {
     minWidth: 32,
     minHeight: 32,
-    // flex: 1,
-    // borderColor: 'hotpink',
-    // borderWidth: 1,
-    // zIndex: 2000,
-    // overflow: 'visible',
-    // lineHeight: 1,
-    // flexWrap: 'nowrap',
-    // elevation: 4,
   },
 });
 
@@ -72,7 +64,7 @@ const MainNavigationStack = () => {
             // eslint-disable-next-line react/no-unstable-nested-components
             headerRight: () => {
               if (user.name) {
-                return <MyAppIconButton icon="add-box" style={styles.headerIcon} onPress={() => navigation.navigate('AddEventModal')} />;
+                return <MyAppIconButton icon="add-box" style={styles.headerIcon} onPress={() => navigation.navigateDeprecated('AddEventModal')} />;
               }
               return null;
             },
